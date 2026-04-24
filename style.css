@@ -381,3 +381,21 @@ body.fog-active #map_inter {
   line-height: 1.6;
   margin: 0;
 }
+.inMenu {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background: #d59e3c;
+  width: 140px;
+  height: 60px;
+  text-align: center;
+  padding-top: 22px;
+  font-size: 26px;
+  font-family: Vezitsa;
+  color: #fdf5d9;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 0 0px 3px #5f4f33;
+  z-index: 10000;
+}

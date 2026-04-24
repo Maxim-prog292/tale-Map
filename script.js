@@ -11,13 +11,13 @@ const regionsData = [
     regionName: "Молоковский муниципальный округ",
     content: [
       {
-        title: "Музей Какойто",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
       {
-        title: "Музей Какойто",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -27,8 +27,8 @@ const regionsData = [
     regionName: "Краснохолмский муниципальный округ",
     content: [
       {
-        title: "Музей 2",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -38,8 +38,8 @@ const regionsData = [
     regionName: "Сонковский муниципальный округ",
     content: [
       {
-        title: "Музей 3",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -73,8 +73,8 @@ const regionsData = [
     regionName: "Лесной муниципальный округ ",
     content: [
       {
-        title: "Музей 6",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -102,8 +102,8 @@ const regionsData = [
     regionName: "Кесовогорский муниципальный округ",
     content: [
       {
-        title: "Музей 8",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -312,8 +312,8 @@ const regionsData = [
     regionName: "	Зубцовский муниципальный округ",
     content: [
       {
-        title: "Музей 18",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -323,8 +323,8 @@ const regionsData = [
     regionName: "	Ржевский муниципальный округ",
     content: [
       {
-        title: "Музей 19",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -334,8 +334,8 @@ const regionsData = [
     regionName: "	Максатихинский муниципальный округ",
     content: [
       {
-        title: "Музей 20",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -345,8 +345,8 @@ const regionsData = [
     regionName: "Спировский муниципальный округ",
     content: [
       {
-        title: "Музей 21",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -368,8 +368,8 @@ const regionsData = [
     regionName: "	Удомельский муниципальный округ",
     content: [
       {
-        title: "Музей 23",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -379,8 +379,8 @@ const regionsData = [
     regionName: "Бологовский муниципальный округ",
     content: [
       {
-        title: "Музей 24",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -390,8 +390,8 @@ const regionsData = [
     regionName: "	Кувшиновский муниципальный округ",
     content: [
       {
-        title: "Музей 25",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -401,8 +401,8 @@ const regionsData = [
     regionName: "Селижаровский муниципальный округ",
     content: [
       {
-        title: "Музей 26",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -412,8 +412,8 @@ const regionsData = [
     regionName: "	Фировский муниципальный округ",
     content: [
       {
-        title: "Музей 27",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -423,8 +423,8 @@ const regionsData = [
     regionName: "	Осташковский муниципальный округ",
     content: [
       {
-        title: "Музей 28",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -434,8 +434,8 @@ const regionsData = [
     regionName: "Пеновский муниципальный округ",
     content: [
       {
-        title: "Музей 29",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -445,8 +445,8 @@ const regionsData = [
     regionName: "Оленинский муниципальный округ ",
     content: [
       {
-        title: "Музей 30",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -456,8 +456,8 @@ const regionsData = [
     regionName: "Бельский муниципальный округ",
     content: [
       {
-        title: "Музей 31",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -467,8 +467,8 @@ const regionsData = [
     regionName: "	Нелидовский муниципальный округ",
     content: [
       {
-        title: "Музей 32",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -478,8 +478,8 @@ const regionsData = [
     regionName: "Андреапольский муниципальный округ ",
     content: [
       {
-        title: "Музей 33",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -501,8 +501,8 @@ const regionsData = [
     regionName: "Западнодвинский муниципальный округ",
     content: [
       {
-        title: "Музей 35",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
@@ -524,8 +524,8 @@ const regionsData = [
     regionName: "tver",
     content: [
       {
-        title: "Музей 37",
-        description: "This is the description for Region 1.",
+        title: "Пока здесь нет информации, но мы уже работаем над этим!",
+        description: "",
         url: "",
       },
     ],
