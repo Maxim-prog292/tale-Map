@@ -22,7 +22,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("./img/back.png");
-  backdrop-filter: blur(4px);
   animation: color 60s infinite;
   overflow: hidden;
   -ms-user-select: none;
@@ -55,30 +54,31 @@ body {
 }
 
 svg {
-  transform: rotate(18deg);
-  transform: scale(1.22) rotate(15deg);
-  width: 1920px;
+  transform: rotate(14deg);
+  transform: scale(1.21) rotate(9deg) translate(60px, -30px);
+  width: 2020px;
   position: relative;
-  top: 80px;
+  top: 40px;
+  right: -30px;
 }
 
 path {
-  fill: #e0a032b9;
+  fill: #ffffff00;
   /* filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1)); */
   /* filter: blur(3px); */
-  stroke: #dedede;
+  stroke: #dedede00;
   pointer-events: visiblePainted;
 }
 path:hover {
-  fill: #eea72d;
+  fill: #b1b1b100;
   transition: 0.5s;
 }
 path:active {
-  fill: #eea72d;
+  fill: #eea72d00;
   transition: 0.2s;
 }
 .active_path {
-  fill: rgba(209, 209, 209, 0.75);
+  fill: rgba(209, 209, 209, 0);
 }
 
 /* появление текста свверху */
@@ -103,61 +103,193 @@ path:active {
 /* сдвиг текста вверх */
 
 /* класс для скрытия */
-.hide {
-  display: none;
-}
-.show {
-  display: block;
-}
-.show_flex {
-  display: flex;
-}
-/* класс для скрытия */
-.modal {
+/* Туман над картой. Слой ниже модалки, но выше SVG. */
+body::before,
+body::after {
+  content: "";
   position: fixed;
   inset: 0;
-  z-index: 10000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  pointer-events: none;
+  opacity: 0;
+}
 
+body::before {
+  z-index: 10000;
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.68) 28%,
+      rgba(255, 255, 255, 0) 62%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(232, 236, 229, 0.78) 0%,
+      rgba(232, 236, 229, 0.42) 34%,
+      rgba(232, 236, 229, 0) 68%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.84) 0%,
+      rgba(255, 255, 255, 0.38) 40%,
+      rgba(255, 255, 255, 0) 70%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(214, 220, 211, 0.74) 0%,
+      rgba(214, 220, 211, 0.4) 38%,
+      rgba(214, 220, 211, 0) 70%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0) 48%
+    );
+  background-size:
+    92vw 76vh,
+    82vw 70vh,
+    92vw 74vh,
+    82vw 70vh,
+    42vw 42vh;
+  background-position:
+    -75vw 50%,
+    175vw 50%,
+    50% -70vh,
+    50% 170vh,
+    50% 50%;
+  background-repeat: no-repeat;
+  filter: blur(18px);
+  transition:
+    opacity 0.75s ease,
+    background-position 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body::after {
+  z-index: 9999;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(28, 31, 26, 0.12),
+    rgba(12, 14, 12, 0.36) 72%
+  );
+  transition: opacity 0.65s ease;
+}
+
+body.fog-active::before {
+  opacity: 1;
+  background-position:
+    50% 50%,
+    50% 50%,
+    50% 50%,
+    50% 50%,
+    50% 50%;
+  animation: fogBreath 5.5s ease-in-out infinite alternate;
+}
+
+body.fog-active::after {
+  opacity: 1;
+}
+
+body.fog-active #map_inter {
+  filter: blur(3px) brightness(0.78) saturate(0.88);
+  transition: filter 0.75s ease;
+}
+
+#map_inter {
+  transition: filter 0.75s ease;
+}
+
+@keyframes fogBreath {
+  0% {
+    filter: blur(18px);
+    transform: scale(1);
+  }
+  100% {
+    filter: blur(23px);
+    transform: scale(1.035);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 80px;
+  bottom: 80px;
+  left: 50%;
+  z-index: 10001;
+  width: min(680px, calc(100vw - 80px));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.97),
+    rgba(246, 243, 232, 0.94)
+  );
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 24px;
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.34),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(28px) scale(0.94);
+  transition:
+    opacity 0.52s ease,
+    transform 0.52s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.52s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.modal.closing {
+  opacity: 0;
+  visibility: visible;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-18px) scale(0.97);
 }
 
 .modal.hidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .modal-close {
-  width: 84px;
-  height: 84px;
-  margin-top: 40px;
-  margin-left: 40px;
-
-  font-size: 36px;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 3;
+  width: 58px;
+  height: 58px;
+  font-size: 28px;
   line-height: 1;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.05);
-
+  background: rgba(42, 35, 25, 0.08);
+  color: rgba(38, 31, 22, 0.86);
   cursor: pointer;
   font-family: sans-serif;
-
   transition:
-    background 0.2s ease,
-    transform 0.15s ease;
+    background 0.22s ease,
+    transform 0.18s ease,
+    box-shadow 0.22s ease;
 }
 
 .modal-close:hover {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(42, 35, 25, 0.16);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .modal-close:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 
 .modal-content {
@@ -165,13 +297,12 @@ path:active {
   padding: 0;
   overflow-y: auto;
   flex: 1;
-
   font-family: sans-serif;
 }
 
 .modal-content h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 42px;
+  margin-bottom: 18px;
 }
 
 .modal-content p {
@@ -196,39 +327,39 @@ path:active {
 .modal-header {
   position: sticky;
   top: 0;
-  padding: 20px 40px;
-  margin-top: 40px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  z-index: 1;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 28px 90px 22px 36px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  z-index: 2;
+  border-bottom: 1px solid rgba(79, 57, 28, 0.1);
 }
 
 #modal-region-name {
   text-align: center;
-  font-size: 42px;
+  font-size: 36px;
+  line-height: 1.15;
   margin: 0;
 }
 
 #modal-museums {
-  padding: 30px 40px 60px;
+  padding: 28px 34px 42px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
 }
 
 .museum-card {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.75);
-  box-shadow: 4px 4px 14px -2px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(84, 63, 30, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 4px 4px 18px -4px rgba(0, 0, 0, 0.16);
   overflow: hidden;
 }
 
 .museum-image {
   display: none;
   width: 100%;
-  max-height: 45vh;
+  max-height: 34vh;
   object-fit: cover;
 }
 
